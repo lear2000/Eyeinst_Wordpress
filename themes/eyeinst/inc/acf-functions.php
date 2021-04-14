@@ -87,6 +87,16 @@ function fs_acf_init_block_types() {
             'keywords'          => array( 'Doctor', 'copy','acf','layout','physicians' ),
         ));
 
+        ///layout-new-heights.php
+        acf_register_block_type(array(
+            'name'              => 'newheights',
+            'title'             => __('New Heights - ACF'),
+            'description'       => __('New Heights Icon Section'),
+            'render_template'   => 'tmpl/layout-new-heights.php',
+            'category'          => 'formatting',
+            'icon'              => 'airplane',
+            'keywords'          => array( 'new heights', 'copy','acf','layout','icons' ),
+        ));
 
     }// Check function exists.
 }

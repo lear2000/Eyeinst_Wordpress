@@ -7,6 +7,12 @@
 	background-repeat: no-repeat;
 	padding-top: 325px;
 
+	@media screen and (max-width: 767px) {
+	  .slick-track {
+	  	left: -3em;
+	  }
+	}
+
 	&__wrapper{
 		padding-left: 20px;
 	}
@@ -24,7 +30,7 @@
 		overflow: hidden;
 		overflow-x: scroll;
 		padding-bottom: 25px;
-		padding-left: 20px;
+		// padding-left: 20px;
 		padding-top: 10px;
     margin-left: -10px;
 
@@ -39,6 +45,8 @@
 			margin-right: 25px;
 			padding: 10px 10px 35px;
 			width: 230px;
+			height: 320px;
+			// margin-left: 1em;
 		}
 
 	}

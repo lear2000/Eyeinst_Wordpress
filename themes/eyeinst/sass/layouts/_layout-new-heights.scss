@@ -1,6 +1,9 @@
 @use '../colors' as *;
 
 .layout-new-heights{
+	.u-text-center {
+		text-align: center;
+	}
 
 	margin-bottom: 1rem;
 
@@ -25,11 +28,14 @@
 	}
 
 	.is-heading{
-
 		font-size: 27px;
 		line-height: 2.25rem;
 		margin: 0 auto 65px;
 		text-transform: uppercase;
+		@media screen and (max-width: 767px) {
+			padding-top: 2em;
+		  margin-bottom: 1em;
+		}
 
 		span{
 			text-transform: none;
@@ -45,6 +51,11 @@
 		&-image img{
 			max-width: 196px;
 			margin: 0 auto;
+			transition: all .3s ease-in-out;
+			&:hover {
+						transform: translateY(-.4em);
+						transition: all .3s ease-in-out;
+			}
 		}
 
 		&-text-text{
@@ -56,6 +67,16 @@
 
 		&-text-heading{
 			font-size: 22px;
+			line-height: 1.2;
+			a {
+				display: block;
+				color: $brand;
+				text-decoration: none;
+				font-weight: 700;
+				&:hover {
+								text-decoration: underline;
+				}
+			}
 		}
 	}
 }

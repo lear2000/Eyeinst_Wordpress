@@ -1,6 +1,5 @@
 jQuery(document).ready(function($) {
 
-	console.log("query")
 
 	// //mobile nav
 	// let mql = window.matchMedia('(max-width: 1024px)');
@@ -29,12 +28,26 @@ jQuery(document).ready(function($) {
 	 * slicks
 	*/
 
+	$('.layout-physicians__list').slick({
+		arrows: false,
+		centerMode: true,
+  	centerPadding: '0px',
+		variableWidth: true,
+		mobileFirst: true,
+		infinite: false,
+		responsive: [{
+			breakpoint: 960,
+			settings: 'unslick'
+		}]
+	});
+
 	$('.layout-new-heights__items').slick({
 		arrows: false,
 		centerMode: true,
   	centerPadding: '60px',
 		variableWidth: true,
 		mobileFirst: true,
+		infinite: false,
 		responsive: [{
 			breakpoint: 960,
 			settings: 'unslick'
