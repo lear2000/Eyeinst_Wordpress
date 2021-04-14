@@ -1,0 +1,17 @@
+//-----------------------------------------------------------------------
+//  Function to remove units
+//  http://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass
+//-----------------------------------------------------------------------
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+
+//-----------------------------------------------------------------------
+//  Font/Line Height
+//  pass in the photoshop font size and line height in the same order
+//  they're displayed in the character window
+//-----------------------------------------------------------------------
+@mixin line-height($ps-font-size, $ps-line-height: $ps-font-size) {
+  line-height: (strip-units($ps-line-height) / strip-units($ps-font-size));
+}

@@ -1,0 +1,17 @@
+.wideheader {
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	.wh-bg {
+		display: block;
+		min-height: 318px;
+		background-size: cover;
+		background-position: center;
+		width: 100%;
+		position: relative;
+		z-index: 0;
+		@media screen and (max-width: 767px) {
+		  min-height: 20vh;
+		}
+	}
+}

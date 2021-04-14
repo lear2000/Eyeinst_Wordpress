@@ -1,0 +1,161 @@
+@use '../colors' as *;
+
+.layout-new-heights{
+
+	margin-bottom: 1rem;
+
+	hr{
+		background-image: url("img/moutains-1.png");
+		background-position: bottom center;
+		background-repeat: no-repeat;
+		min-height: 50px;
+		border: 0;
+		background-color: transparent;
+		overflow: hidden;
+		margin-top: 80px;
+
+		&:before{
+
+		}
+
+		&:after{
+
+		}
+
+	}
+
+	.is-heading{
+
+		font-size: 27px;
+		line-height: 2.25rem;
+		margin: 0 auto 65px;
+		text-transform: uppercase;
+
+		span{
+			text-transform: none;
+			font-weight: 300;
+			display: block;
+		}
+
+	}
+
+
+	&__item{
+
+		&-image img{
+			max-width: 196px;
+			margin: 0 auto;
+		}
+
+		&-text-text{
+			max-width: 225px;
+			margin: 0 auto;
+			line-height: 1rem;
+			font-size: 15px;
+		}
+
+		&-text-heading{
+			font-size: 22px;
+		}
+	}
+}
+
+@media only screen and (max-width: 959px) {
+
+	.layout-new-heights{
+
+		&__items:not(.slick-slider){
+
+			.layout-new-heights__item:not(:first-of-type){
+				display: none;
+			}
+
+		}
+	}
+
+}
+
+
+
+// desktop
+@media only screen and (min-width: 960px) {
+	.layout-new-heights{
+
+		background-image: url("img/background-mountains-4.png");
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size: 110%;
+		padding-top: 24vw;
+
+		hr{
+			margin-top: 200px;
+			position: relative;
+
+			&:before{
+				background-color: #A2A2A2;
+				content: " ";
+				height: 1px;
+				left: -70%;
+				position: absolute;
+				top: 48px;
+				width: 100%;
+			}
+
+			&:after{
+				background-color: #A2A2A2;
+				content: " ";
+				height: 1px;
+				position: absolute;
+				right: -70%;
+				top: 48px;
+				width: 100%;
+			}
+
+		}
+
+		&__wrapper{
+			margin: 0 auto;
+			max-width: $max-width-container;
+		}
+
+		.is-heading{
+			color: $brand;
+			font-size: 45px;
+
+			span{
+				font-size: 30px;
+				display: inline;
+
+				&:last-of-type{
+					&:after{
+						content:" ";
+						display: block;
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+
+		&__items{
+			display: flex;
+			justify-content: space-between;
+			margin-top: -105px;
+			max-width: 100%;
+		}
+
+		&__item{
+			max-width: 250px;
+
+			&:nth-last-of-type(2),
+			&:nth-last-of-type(3){
+				margin-top: 100px;
+			}
+
+			&-text-heading{
+				span{
+					display: block;
+				}
+			}
+		}
+	}
+}

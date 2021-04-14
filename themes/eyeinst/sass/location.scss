@@ -1,0 +1,50 @@
+@use 'colors' as *;
+.locmap {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+.locmapcnt {
+		display: flex;
+		justify-content: space-around;
+		@media screen and (max-width: 767px) {
+		  flex-wrap: wrap;
+		}
+		h2 {
+			margin-top: 1em;
+			@media screen and (max-width: 767px) {
+			  flex-grow: 1;
+			  width: 100%;
+			  margin-top: 0;
+			}
+		}
+		.locad {
+			text-align: left;
+			@media screen and (max-width: 767px) {
+			  width: 50%;
+			  text-align: center;
+			}
+			button {
+				display: block;
+				margin-top: 1em;
+				text-transform: uppercase;
+				@media screen and (max-width: 767px) {
+				  margin: 1em auto;
+				}
+			}
+		}
+		a {
+			font-weight: normal;
+			text-decoration: none;
+			color: $text;
+		}
+}
+.mapblock {
+	padding-top: 2em;
+	padding-bottom: 2em;
+	display: flex;
+	justify-content: center;
+	@media screen and (max-width: 767px) {
+	  padding-top: 1em;
+	  padding-bottom: 1em;
+	}
+}

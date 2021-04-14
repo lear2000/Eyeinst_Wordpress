@@ -1,0 +1,109 @@
+@use '../colors' as *;
+
+.layout-rating-quote{
+	color: $darkgray;
+	padding-bottom: 80px;
+	padding-top: 80px;
+
+	&__quote{
+
+		.is-heading{
+			color: $darkgray;
+			font-size: 27px;
+			font-style: italic;
+			font-weight: $font-weight-light;
+			line-height: 1.4;
+
+			b{
+				font-weight: 400;
+			}
+		}
+	}
+
+	&__rating{
+		margin-top: 85px;
+	}
+
+	&__rating-average-image{
+		img{
+			margin: 0 auto;
+		}
+	}
+
+	&__rating-average-text{
+		line-height: 1.5;
+		margin-top: 20px;
+
+		span{
+			display: block;
+		}
+
+		&-1{
+			font-size: 40px;
+			font-weight: $font-weight-bold;
+		}
+		&-2{
+			font-size: 22px;
+		}
+		&-3{
+			font-size: 25px;
+			font-style: italic;
+		}
+	}
+
+	&__rating-link{
+		font-size: 14px;
+		margin-top: 50px;
+
+		a{
+			border-bottom: 1px solid;
+			color: $darkgray;
+			font-weight: $font-weight-normal;
+			padding-bottom: 4px;
+			text-decoration: none;
+		}
+	}
+}
+
+
+// desktop
+@media only screen and (min-width: 960px) {
+
+	.layout-rating-quote{
+		color: $darkgray;
+		padding-bottom: 80px;
+		padding-top: 80px;
+
+		&__quote{
+			margin: 0 auto;
+			max-width: 770px;
+		}
+
+		&__rating{
+			display: flex;
+			justify-content: center;
+		}
+
+		&__rating-average{
+			display: flex;
+		}
+
+		&__rating-average-text{
+
+			margin-left: 25px;
+			margin-right: 100px;
+			margin-top: 0;
+
+			span.layout-rating-quote__rating-average-text-1,
+			span.layout-rating-quote__rating-average-text-2{
+				display: inline-block;
+			}
+
+			&-1{
+				padding-left: 25px;
+			}
+
+		}
+
+	}
+}

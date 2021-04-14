@@ -1,0 +1,38 @@
+.titlebar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	box-shadow: 0 13px 16px 	rgba(0, 0, 0, .18);
+	background-image: url(img/titlebarlogo.svg);
+	background-repeat: no-repeat;
+	background-size: 367px 362px;
+	background-position: right center;
+	min-height: 133px;
+	width: 100%;
+	// max-width: 1080px;
+	margin: 0 auto;
+	margin-top: -2em;
+	margin-bottom: 2em;
+	background-color: #FAFAFA;
+	z-index: 2;
+	position: relative;
+	@media screen and (max-width: 980px) {
+	  background-position: 130%;
+	  max-width: 1024px;
+	}
+	@media screen and (max-width: 767px) {
+	  max-width: 100%;
+	  	min-height: 80px;
+	  	background-position: 100%;
+	  	background-size: 30vh auto;
+	}
+	h1 {
+		font-size: 40px;
+		font-weight: 600;
+		margin-bottom: 0;
+		@media screen and (max-width: 767px) {
+		  font-size: 2em;
+		}
+	}
+}

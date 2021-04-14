@@ -1,0 +1,140 @@
+<?php  
+namespace aform\fields;
+
+class cm_integration extends \aform\core\field {
+	
+	var $inputvalues;
+	
+	function __construct() {
+		$this->fieldsettings = new \StdClass;
+		$this->fieldsettings->name  = 'cm_integration';
+		$this->fieldsettings->label = 'CM Signup';
+	}
+	
+	function renderField( $fieldData = null , $index = null){
+		global $post,$post_id;		
+		ob_start();
+		$fieldIdAsIndex = $fieldData->ID;
+		parent::formfieldTop($index , $fieldData);
+		//custom field layout here
+		?>
+		<div class="field-create-basic value-bind-parent">
+			<input type="hidden" name="aform-fields[<?php echo $fieldIdAsIndex;?>][input_type]" value="<?php echo $this->fieldsettings->name; ?>">
+			<input type="hidden" class="aform-field-id" name="aform-fields[<?php echo $fieldIdAsIndex;?>][ID]" value="<?php echo $this->fieldID;?>">
+			<input type="hidden" name="aform-fields[<?php echo $fieldIdAsIndex;?>][form_id]" value="<?php echo $post->ID; ?>">
+			<input type="hidden" class="aform-input-order" name="aform-fields[<?php echo $fieldIdAsIndex;?>][input_order]" value="<?php echo $index;?>">
+			<input type="hidden" name="aform-fields[<?php echo $fieldIdAsIndex;?>][input_settings]" value="">
+			
+			<div class="handle-div"><span class="rm-drag handle"></span></div>
+			
+			<div class="field-type-label"><h3><?php echo $this->fieldsettings->label; ?></h3></div>
+
+			<?php
+				$display_name = $this->inputSettings( 'display_name' );
+				$field_name = $this->inputSettings( 'field_name' );
+				$valueMatch = ( strtolower(str_ireplace(' ', '-', $display_name)) == $field_name ) ? true : false;
+				$inputString = "aform-fields[$fieldIdAsIndex][input_settings]";					
+			?>
+
+
+			<div>
+				<label for="field-label">Field Label</label><br>
+				<input type="text" value="<?php echo $display_name; ?>" name="aform-fields[<?php echo $fieldIdAsIndex;?>][input_settings][display_name]" class="<?php echo ($valueMatch)  ? 'value-bind' : ''; ?>" data-uglify="true" />
+			</div>
+			
+			<div>
+				<label for="field-name">Field Name</label><br>
+				<input type="text" value="<?php echo $field_name; ?>" name="aform-fields[<?php echo $fieldIdAsIndex; ?>][input_settings][field_name]" class="<?php echo( $valueMatch ) ? 'value-set' : ''; ?>" />
+			</div>
+			
+			<div><?php /* this fixes flexbox layout since there's no way to make a CM sign up required */ ?></div>
+			
+			<div class="delete-field"><a title="Delete Field"><span class="dashicons dashicons-trash"><i>Delete Field</i></span></a></div>
+		</div> <!-- .field-create-basic -->
+
+		<?php $this->formfieldAdvancedToggle(); ?>
+		
+		<div class="field-create-advanced field-tab">
+			
+			<input type="hidden" name="<?php echo $inputString; ?>[cmIntegration]" value="true" />
+			<div class="settings-holder">
+				<div>			
+					<p><label for="<?php echo $inputString; ?>[cmAPI]">CM API: </label> <input type="text" id="<?php echo $inputString; ?>[cmAPI]" name="<?php echo $inputString; ?>[cmAPI]" value="<?php echo $this->inputSettings( 'cmAPI' ); ?>"></p>				
+					<p><label for="<?php echo $inputString; ?>[cmListID]">CM List ID:</label> <input type="text" id="<?php echo $inputString; ?>[cmListID]" name="<?php echo $inputString; ?>[cmListID]" value="<?php echo $this->inputSettings( 'cmListID' ); ?>"></p>
+							
+					<p>
+						<label for="<?php echo $inputString; ?>[reverse_display]">Show input before label</label>
+						<span class="af-input-switch">
+							<input id="<?php echo $inputString; ?>[reverse_display]" name="<?php echo $inputString; ?>[reverse_display]" type="checkbox" value="true" <?php echo ( $this->inputSettings( 'reverse_display' ) == true ) ? 'checked' : '';?>  >
+							<label for="<?php echo $inputString; ?>[reverse_display]"></label>
+						</span>
+					</p>
+					<p>
+						<label for="<?php echo $inputString; ?>[checked_default]">Checked by default</label>
+						<span class="af-input-switch">
+							<input type="checkbox" id="<?php echo $inputString;?>[checked_default]" name="<?php echo $inputString;?>[checked_default]" value="true" <?php echo ( $this->inputSettings( 'checked_default' ) ) ? "checked" : ''; ?>>
+							<label for="<?php echo $inputString; ?>[checked_default]"></label>
+						</span>
+					</p>
+				</div>
+			</div>
+			<?php $this->advancedSettingsBottom(); ?>	
+		</div> <!-- .field-create-advanced-->
+		
+		<?php
+		parent::formfieldBottom();
+		
+		$output = ob_get_contents();
+		ob_end_clean();
+		return $output;
+	}
+	
+	
+	// called from form handler
+	function sendToAPI( $api, $listID, $email, $formdata=array() ) {
+
+		$resultArray = array(
+			'emailAddress' 	=> $email,
+			'Resubscribe'	=> true
+		);
+				
+		if( !empty($formdata) ):
+		
+			if( isset($formdata['Name']) ):
+				$resultArray['Name'] = $formdata['Name'];
+				unset( $formdata['Name']);			
+			endif;
+			
+			if( !empty($formdata) ): //if we have other custom fields besides name
+				$resultArray['CustomFields'] = array();
+				
+				foreach( $formdata as $key => $val ):
+					$resultArray['CustomFields'][] = array( 'Key' => $key, 'Value' => $val );
+				endforeach;
+			endif;
+			
+		endif;
+		
+		$auth = array('api_key' => $api); // client api key  overview -> client settings -> edit -> show api info (get id too you will need it next)			
+			
+		// ADDS EMAIL AND FIRST NAME TO LIST NEEDS TO BE ON PROCESS PORTION
+		$sub = new \CS_REST_Subscribers($listID,$auth); //LIST ID and api key - you cant get this shit from the website, you need it from the above function
+		$result = $sub->add( $resultArray );
+		
+		
+	}
+	
+	/*##############################################################*/
+	/*#######################     PUBLIC   #########################*/
+	/*##############################################################*/
+	/* PUBLIC RENDER : used when creating form on the front-end */
+	function publicRender( $form = null ){
+		$settings = $this->input->settings;
+
+		?>
+			<input type="checkbox" name="<?php echo afFieldName($this->fieldname); ?>" id="<?php echo $this->fieldname;?>" value="true" <?php $this->fieldRequired();?> <?php echo ( isset($settings->checked_default) && $settings->checked_default == "true" ) ? "checked" : '';?>>
+		<?php
+
+	}
+	
+}

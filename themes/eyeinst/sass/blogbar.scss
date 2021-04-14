@@ -1,0 +1,91 @@
+@use 'colors' as *;
+.blogbar {
+	margin-bottom: 2em;
+	select {
+		font-size: 22px;
+		appearance:none;
+		border:none;
+		color: $secondary;
+		background: transparent url("img/down-arrow.svg") no-repeat;
+		background-position: right top 60%;
+		padding-right: 1em;
+		padding-left: 1em;
+		@media screen and (max-width: 767px) {
+		  flex:1 0 100%;
+		  margin-bottom: 1em;
+		}
+	}
+	.fake {
+		display: flex;
+		justify-content: space-between;
+		@media screen and (max-width: 1024px) {
+			flex-wrap: wrap;
+			justify-content: flex-start;
+		}
+
+	}
+	.search-form {
+		font-size: 22px;
+		@media screen and (max-width: 1024px) {
+		  flex:1 0 100%;
+		  padding-top: 1em;
+		  padding-left: 1em;
+		}
+		@media screen and (max-width: 767px) {
+		  flex: 1 0 100%;
+		  padding-left: 0;
+		  padding-top: 0;
+		  label {
+		  	padding-left: 1em;
+		  }
+		}
+		input[type="search"] {
+			border:none;
+			min-width: 357px;
+			border-bottom: 1px solid #DEDEDE;
+			margin-left: 1em;
+			height: 48px;
+			font-style: italic;
+			background-color: #fff;
+			color: #A8A8A8;
+			font-size: 1em;
+			text-indent: 5px;
+			font-weight: 400;
+			@media screen and (max-width: 767px) {
+			  margin-left: 0;
+			  height: 44px;
+			  margin-bottom: .5em;
+			  min-width: 100%;
+			}
+
+		}
+		input[type="submit"] {
+			color: #fff;
+			font-weight: 400;
+			text-decoration: none;
+			text-align: center;
+			font-size: 0.94em;
+			display: inline-block;
+			padding-top: 0.8em;
+			padding-bottom: 0.8em;
+			border-radius: 70px;
+			min-width:initial;
+			cursor: pointer;
+			background-color: $navitem;
+			color: #fff;
+			transition: all .3s ease-in-out;
+			text-transform: uppercase;
+			max-width: 128px;
+			font-size: 16px;
+			border:none;
+			padding-left: 1em;
+			padding-right: 1em;
+			font-weight: 300;
+			margin-left: .5em;
+			&:hover {
+					background-color: $purple;
+			}
+		}
+	}
+
+}

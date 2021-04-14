@@ -1,0 +1,154 @@
+@use 'colors' as color;
+@use 'mixins' as mixin;
+.fake {
+	padding:1em 4vw;
+}
+body {
+	font-family: 'Lato';
+	font-weight: color.$regular;
+	font-size: 16px;
+	line-height: 2;
+	color: color.$text;
+	height: 100%;
+	margin:0;
+	padding:0;
+	&.is-active {
+		overflow: hidden;
+	}
+}
+p {
+	font-family: 'Lato';
+	font-size: 1em;
+	@include mixin.line-height(16,29);
+	color: color.$text;
+	margin-bottom: 16px;
+}
+strong {
+	font-weight: color.$bold;
+}
+h1,h2,h3,h4,h5 {
+	margin-bottom: 16px;
+}
+h1 {
+	font-size: 40px;
+	font-weight: color.$bold;
+	color: color.$brand;
+	@include mixin.line-height(40,47);
+}
+h2 {
+	font-size: 28px;
+	font-weight: color.$semibold;
+	color: color.$text;
+	@include mixin.line-height(28,24);
+}
+h3 {
+	font-size: 26px;
+	font-weight: color.$semibold;
+	color: color.$brand;
+	@include mixin.line-height(26,24);
+}
+h4 {
+	font-size: 24px;
+	font-weight: color.$semibold;
+	color: color.$brand;
+	@include mixin.line-height(24,24);
+}
+h5 {
+	font-size: 20px;
+	font-weight: color.$semibold;
+	color: color.$brand;
+	@include mixin.line-height(20,24);
+}
+
+a {
+	color: color.$purple;
+	font-weight: color.$bold;
+	cursor: pointer;
+	 &:hover {
+	 		text-decoration: underline;
+	 }
+}
+
+ul {
+	list-style-type: disc;
+	list-style-position: inside;
+	li {
+
+		color: color.$text;
+		font-size: 1em;
+		@include mixin.line-height(16,32);
+	}
+}
+ol {
+	list-style-position: inside;
+}
+/* button */
+.btn {
+	background-color: color.$secondary;
+	color: #fff;
+	font-weight: color.$regular;
+	text-decoration: none;
+	text-align: center;
+	font-size: .94em;
+	display: inline-block;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border-radius: 70px;
+	text-transform: uppercase;
+	text-decoration: none;
+	border: 1px solid 	rgba(255, 255, 255, .5);
+
+	@media (hover: hover) {
+		&:hover {
+			text-decoration: none;
+			background-color: color.$purple;
+			color: #fff;
+			transition: all .3s ease-in-out;
+			border: 1px solid 	rgba(255, 255, 255, .5);
+		}
+	}
+	&.primary {
+		background-color: transparent;
+		border-bottom: 1px solid color.$brand;
+		color: color.$brand;
+		border-radius: 0;
+		transition: all .3s ease-in-out;
+		&:hover {
+			background-color: color.$brand;
+			color: #fff;
+			transition: all .3s ease-in-out;
+			border-bottom: 1px solid color.$brand;
+		}
+	}
+	&.secondary {
+		background-color: color.$brand;
+		border: 1px solid 	rgba(255, 255, 255, .5);
+		color: #fff;
+		transition: all .3s ease-in-out;
+		&:hover {
+			background-color: color.$purple;
+			color: #fff;
+			transition: all .3s ease-in-out;
+			border: 1px solid 	rgba(255, 255, 255, .5);
+		}
+	}
+	&.third {
+		background-color: color.$navitem;
+		transition: all .3s ease-in-out;
+		&:hover {
+			background-color: color.$purple;
+			color: #fff;
+			transition: all .3s ease-in-out;
+			border: 1px solid 	rgba(255, 255, 255, .5);
+		}
+	}
+}
+
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}

@@ -1,0 +1,121 @@
+@use 'colors' as *;
+.compchart {
+	max-width: 1080px;
+	background-color: #FAFAFA;
+	box-shadow: 0 13px 16px rgba(0,0,0,.3);
+	border:1px solid #E5E5E5;
+	padding:6em 1em 1em 1em;
+	margin: 0 auto;
+	h2,p {
+		color: $brand;
+		text-align: center;
+		line-height: 1.1;
+	}
+	p {
+		margin-bottom: 4em
+	}
+	.cnote-wrap {
+		@media screen and (min-width: 1025px) {
+				  display: none;
+		}
+		@media screen and (max-width: 1024px) {
+			border-bottom: 1px solid $purple;
+		}
+		@media screen and (max-width: 767px) {
+		  width: 100%;
+		  border-bottom: none;
+		}
+	}
+	.bgwhite {
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media screen and (max-width: 1024px) {
+			display: none;
+		}
+	}
+	.bgdark {
+		background-color: #624F92;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.bglight {
+		background-color: #8D78C1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.cgrid-wrap {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.cgrid {
+		padding: 1em;
+		width: 50%;
+		flex-grow: 1;
+		flex-shrink: 0;
+		@media screen and (min-width: 1025px) {
+			width: calc(100% / 5);
+		}
+	}
+	.cnotes {
+		padding: 0;
+		width: 100%;
+		flex: 1 0 100%;
+		border-bottom: 1px solid #EAEAEA;
+		display: flex;
+		justify-content: center;
+		background-color: #fff;
+		align-items: center;
+		span {
+			line-height: 1.2;
+			width: 50%;
+			text-align: center;
+			div	{
+				padding:1em;
+			}
+		}
+		span:first-of-type {
+			border-right: 2px solid #EAEAEA;
+			padding-right: 1em;
+			color: $purple;
+		}
+			span:last-of-type {
+				padding-left: 1em;
+			}
+
+	}
+}
+@media screen and (max-width: 1024px) {
+  .d-gridwrap {
+  	display: none;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+	.cgrid {
+		border-right: 2px solid #FAFAFA;
+		&.no-b {
+			border-right: none;
+		}
+	}
+		  .d-gridwrap {
+		  	display: flex;
+		  	width: 100%;
+		  	& > * {
+		  		width: calc( 100% / 5);
+		  		text-align: center;
+		  		padding:1em;
+		  		background-color: #fff;
+		  		border-top: 1px solid #EAEAEA;
+		  	}
+		  	span:first-of-type {
+		  		color: $purple;
+		  	}
+		  	span:nth-child(-n+4) {
+    				border-right: 2px solid #FAFAFA;
+					}
+		  }
+}

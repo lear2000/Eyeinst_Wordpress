@@ -1,0 +1,33 @@
+@use '_reset';
+@use '_font';
+@use '_main';
+@use 'colors';
+@use '_header';
+@use 'location';
+@use 'wideheader';
+@use 'titlebar';
+@use 'blogbar';
+@use 'blog';
+@use 'full-header';
+@use 'footer-landing';
+@use 'compchart';
+@use 'footer';
+// plugins
+
+@use "plugins/slick";
+
+// layouts
+@use "layouts/layout-1-2";
+@use "layouts/layout-1-2-copy";
+@use "layouts/layout-physicians";
+@use "layouts/layout-new-heights";
+@use "layouts/layout-rating-quote";
+@use "layouts/layout-1-2-alternate.scss";
+@use "layouts/layout-text-only.scss";
+@use "layouts/layout-1-2-video.scss";
+@use "layouts/layout-candidates.scss";
+@use "layouts/layout-full-background-text.scss";
+
+// pages
+
+

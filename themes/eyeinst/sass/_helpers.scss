@@ -1,0 +1,16 @@
+@use "colors" as *;
+
+.u-text-center{
+	text-align: center;
+} 
+
+.u-uppercase{
+	text-transform: uppercase;
+}
+
+@media only screen and (min-width: 960px) {
+	.layout-container{
+		max-width: $max-width-container;
+		margin: 0 auto;
+	}
+}

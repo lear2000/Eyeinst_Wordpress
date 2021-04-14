@@ -1,0 +1,92 @@
+@use '../colors' as *;
+
+
+.layout-candidates{
+	padding: 90px 20px 20px;
+
+	.is-heading{
+		font-size: 28px;
+	}
+
+	&__text-text{
+		max-width: 670px;
+		margin: 20px auto 0;
+		p{
+			line-height: 1.45;
+		}
+
+	}
+
+	&__types{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		&-type{
+			margin-bottom: 40px;
+		}
+
+		img{
+			margin: 0 auto;
+		}
+
+	}
+
+}
+
+
+@media only screen and (min-width: 767px) {
+	.layout-candidates{
+		padding-top: 180px;
+		padding-bottom: 100px;
+
+		background-image: url("img/background-mountains-5.png");
+		background-repeat: no-repeat;
+		background-position: center 170px;
+
+
+		&__types{
+			flex-direction: row;
+			flex-wrap: wrap;
+			margin-top: 240px;
+
+			&-type{
+				max-width: 50%;
+				flex-basis: 50%;
+			}
+		}
+	}
+}
+
+
+@media only screen and (min-width: 960px) {
+	.layout-candidates{
+
+		&__types{
+			flex-wrap: nowrap;
+			justify-content: space-between;
+
+			&-type{
+				flex-basis: initial;
+				max-width: none;
+			}
+		}
+
+		&__types-type-copy{
+			margin: 10px auto 0;
+			line-height: 1.25;
+
+			span{
+				display: block;
+			}
+		}
+	}
+}
+
+
+@media only screen and (min-width: 1300px) {
+	.layout-candidates{
+		background-size: 105%;
+	}
+}

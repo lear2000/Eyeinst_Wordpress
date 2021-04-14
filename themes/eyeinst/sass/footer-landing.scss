@@ -1,0 +1,40 @@
+.olsurg {
+	display: flex;
+	justify-content: center;
+	img {
+		border-radius: 1em;
+	}
+	.ssurg {
+		padding:0 2em;
+		p {
+			padding-top: 1em;
+			text-align: center;
+		}
+	}
+}
+
+.footercopy {
+	color: #fff;
+	text-align: center;
+	padding-top: 3em;
+	h2 {
+		margin-bottom: 2em;
+	}
+	h3 {
+		color: #fff;
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		font-weight: normal;
+		cursor: pointer;
+		&:hover {
+						text-decoration: underline;
+		}
+	}
+}
+.landingfooter {
+	h2 {
+		margin-bottom: 2em;
+	}
+}

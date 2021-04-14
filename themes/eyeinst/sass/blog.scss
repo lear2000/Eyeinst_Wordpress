@@ -1,0 +1,46 @@
+@use 'colors' as *;
+.b-article {
+	display: flex;
+	border-bottom: 1px solid #DEDEDE;
+	padding-bottom: 3em;
+	padding-top: 2em;
+	@media screen and (max-width: 767px) {
+	  flex-wrap: wrap;
+	}
+	&:last-of-type {
+		border-bottom: none;
+	}
+	.fimg {
+		flex-basis: 150px;
+		width: 150px;
+		flex-grow: 1;
+		flex-shrink: 0;
+		img {
+			width: 150px;
+			height: 150px;
+		}
+	}
+	.b-cnt {
+		padding-left: 5.6em;
+		@media screen and (max-width: 767px) {
+		  padding-left: 0;
+		  padding-top: 1em;
+		}
+	}
+	h2 {
+		font-weight: $semibold;
+		line-height: 1.2;
+	}
+			p:last-of-type{
+			margin-bottom: 1.5em;
+		}
+	.meta {
+		display: block;
+		line-height: 1.2;
+		font-size: 13px;
+		margin-bottom: 1.2em;
+		a {
+			text-decoration: none;
+		}
+	}
+}

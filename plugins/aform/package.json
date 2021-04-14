@@ -1,0 +1,42 @@
+{
+  "name": "aForm",
+  "version": "1.0.0",
+  "description": "aForm, creates forms",
+  "license": "ISC",
+  "main": "aform.php",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-sass": "4.0.2",
+    "gulp-watch": "^4.3.2",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "async": "^2.6.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-jshint": "2.0.4",
+    "gulp-sass": "4.0.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-watch": "^4.3.2",
+    "jshint": "^2.9.6",
+    "moment": "^2.20.1",
+    "vue": "^2.5.13",
+    "vue-json-excel": "^0.1.7",
+    "vue-loader": "^13.6.2",
+    "vue-resource": "^1.3.5",
+    "vue-template-compiler": "^2.5.13",
+    "vuejs-datepicker": "^0.9.22"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rubenmarin@bitbucket.org/rubenmarin/aform.git"
+  },
+  "author": "Ruben Marin",
+  "homepage": "https://rubenmarin@bitbucket.org/rubenmarin/aform#readme"
+}

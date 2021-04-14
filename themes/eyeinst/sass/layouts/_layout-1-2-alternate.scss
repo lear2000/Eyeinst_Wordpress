@@ -1,0 +1,42 @@
+@use '../colors' as *;
+
+
+.layout-1-2-alternate{
+
+	margin: 3rem 0px;
+	padding: 0 20px;
+
+	&__wrapper{
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__item{
+		margin: 20px 0px;
+	}
+
+	&__image{
+		img{
+			margin: 0 auto;
+			max-width: 100%;
+		}
+	}
+}
+
+
+@media only screen and (min-width: 960px) {
+
+	.layout-1-2-alternate{
+
+		&__wrapper{
+			align-items: center;
+			flex-direction: row;
+		}
+
+		&__item{
+			max-width: 50%;
+			padding: 0px 20px;
+		}
+	}
+
+}

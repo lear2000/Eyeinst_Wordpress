@@ -1,0 +1,34 @@
+@use '../colors' as *;
+
+.layout-full-background-text{
+	padding: 150px 20px;
+	margin: 50px 0px;
+
+	background-position: center;
+	background-size: cover;
+
+	&__wrapper{
+		max-width: 590px;
+		margin: 0 auto;
+	}
+
+	p{
+		margin-bottom: 40px;
+	}
+
+	.is-heading{
+		line-height: 1.25;
+	}
+
+	.is-heading,
+	p{
+		color: $white;
+	}
+
+	&__text-text{
+		margin-top: 50px;
+	}
+
+
+
+}
