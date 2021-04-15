@@ -1,4 +1,4 @@
-@use 'colors' as color;
+@use 'colors' as *;
 .mtns {
 	background-image: url(img/footer-mts.svg);
 	background-size: cover;
@@ -12,7 +12,7 @@
 	}
 }
 footer{
-	background-color: color.$secondary;
+	background-color: $secondary;
 	padding-bottom: 8em;
 	padding-top: 6em;
 	@media screen and (max-width: 767px) {
@@ -31,14 +31,14 @@ footer{
 	}
 	h2 {
 		color: #fff;
-		font-weight: color.$semibold;
+		font-weight: $semibold;
 		text-align: center;
 		font-size: 35px;
 		margin-bottom: 1em;
 		line-height: 1;
 		span {
 			font-size: 25px;
-			font-weight: color.$light;
+			font-weight: $light;
 			display: block;
 			margin-bottom: 10px;
 			line-height: 1;
@@ -55,6 +55,13 @@ footer{
 		@media screen and (max-width: 767px) {
 		  margin-bottom: 2em;
 		  font-size: 18px;
+		}
+		a {
+			font-weight: $regular;
+			text-decoration: none;
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
 	.f-logo {
@@ -87,7 +94,7 @@ footer{
 			text-align: center;
 			display: block;
 			font-size: 28px;
-			font-weight: color.$semibold;
+			font-weight:$semibold;
 			text-decoration: none;
 		}
 	}
@@ -181,7 +188,7 @@ footer {
 			color: #fff;
 			text-align: left;
 			font-size: 14px;
-			font-weight: color.$light;
+			font-weight: $light;
 		}
 		.type-submitbutton {
 			display: flex;
@@ -192,12 +199,12 @@ footer {
 		.submit-btn {
 			min-width:initial;
 			cursor: pointer;
-			background-color: color.$navitem;
+			background-color: $navitem;
 			color: #fff;
 			transition: all .3s ease-in-out;
 			text-transform: uppercase;
 			&:hover {
-					background-color: color.$purple;
+					background-color: $purple;
 			}
 		}
 		input {
@@ -323,11 +330,23 @@ footer {
 
 	.formsmall {
 		margin-top: 3em;
+					small {
+				color: #fff;
+				text-align: center;
+			}
 		form {
 			display: flex;
 			margin:0;
 			padding:0;
 			flex-wrap: wrap;
+			small {
+				color: #fff;
+				text-align: center;
+			}
+			.stopyenoh {
+				display: none;
+				visibility: hidden;
+			}
 			@media screen and (min-width: 768px) {
 					  justify-content: center;
 					  width: 100%;
@@ -350,10 +369,7 @@ footer {
 					  }
 			}
 
-			small {
-				color: #fff;
-				text-align: center;
-			}
+
 
 			@media screen and (max-width: 767px) {
 			  flex-wrap: wrap;
@@ -378,6 +394,7 @@ footer {
 	bottom: 0;
 	right: 10vw;
 	width: 287px;
+	z-index: 10;
 	a {
 		color: #fff;
 		font-weight: normal;
@@ -433,7 +450,7 @@ footer {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	background-color: color.$brand;
+	background-color: $brand;
 	justify-content: center;
 	align-items: center;
 	height: 70px;

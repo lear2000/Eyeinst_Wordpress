@@ -1628,6 +1628,13 @@ footer address {
     font-size: 18px;
   }
 }
+footer address a {
+  font-weight: 400;
+  text-decoration: none;
+}
+footer address a:hover {
+  text-decoration: none;
+}
 @media screen and (max-width: 767px) {
   footer .f-logo {
     margin-bottom: 2em;
@@ -1946,6 +1953,10 @@ footer .formlarge .type-submitbutton input {
 footer .formsmall {
   margin-top: 3em;
 }
+footer .formsmall small {
+  color: #fff;
+  text-align: center;
+}
 footer .formsmall form {
   display: -webkit-flex;
   display: flex;
@@ -1953,6 +1964,14 @@ footer .formsmall form {
   padding: 0;
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
+}
+footer .formsmall form small {
+  color: #fff;
+  text-align: center;
+}
+footer .formsmall form .stopyenoh {
+  display: none;
+  visibility: hidden;
 }
 @media screen and (min-width: 768px) {
   footer .formsmall form {
@@ -1980,10 +1999,6 @@ footer .formsmall form {
     margin-right: 0;
   }
 }
-footer .formsmall form small {
-  color: #fff;
-  text-align: center;
-}
 @media screen and (max-width: 767px) {
   footer .formsmall form {
     -webkit-flex-wrap: wrap;
@@ -2004,6 +2019,7 @@ footer .formsmall form small {
   bottom: 0;
   right: 10vw;
   width: 287px;
+  z-index: 10;
 }
 @media screen and (max-width: 767px) {
   .desk-sticky {
@@ -2681,6 +2697,9 @@ footer .formsmall form small {
   color: #343638;
   padding-bottom: 80px;
   padding-top: 80px;
+}
+.layout-rating-quote .u-text-center {
+  text-align: center;
 }
 .layout-rating-quote__quote .is-heading {
   color: #343638;

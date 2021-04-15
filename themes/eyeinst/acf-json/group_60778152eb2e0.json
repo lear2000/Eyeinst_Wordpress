@@ -1,0 +1,48 @@
+{
+    "key": "group_60778152eb2e0",
+    "title": "What Kind of Footer?",
+    "fields": [
+        {
+            "key": "field_6077818726fe9",
+            "label": "What Kind of Footer",
+            "name": "what_kind_of_footer",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "single": "Single Button",
+                "quick": "Quick Contact"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "single",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1618444731
+}

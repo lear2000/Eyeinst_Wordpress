@@ -98,6 +98,18 @@ function fs_acf_init_block_types() {
             'keywords'          => array( 'new heights', 'copy','acf','layout','icons' ),
         ));
 
+                ///layout-rating-quote.php
+        acf_register_block_type(array(
+            'name'              => 'rating',
+            'title'             => __('Rating Block - ACF'),
+            'description'       => __('Rating Section'),
+            'render_template'   => 'tmpl/layout-rating-quote.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-plugins',
+            'keywords'          => array( 'rating', 'copy','acf','layout' ),
+        ));
+
+
     }// Check function exists.
 }
 

@@ -26,9 +26,6 @@ if ( ! empty( $block['align'] ) ) {
 }
 ?>
 
-
-<?php // TEMPLATE ?>
-
 <section class="layout-new-heights <?php echo esc_attr( $classes ); ?>" id="<?php echo esc_attr( $id ); ?>" >
 	<div class="layout-new-heights__wrapper">
 
